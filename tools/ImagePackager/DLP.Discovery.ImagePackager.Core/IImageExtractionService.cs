@@ -26,7 +26,8 @@ namespace DLP.Discovery.ImagePackager.Core
         {
             var extension = System.IO.Path.GetExtension(student.FileName);
             var sourceFile = System.IO.Path.Combine(options.SourceImagePath, student.FileName);
-            var destinationFile = System.IO.Path.Combine(options.DestinationPath, @"Content\Students\", $"{student.StudentUSI}{extension}");
+            var destinationFile = System.IO.Path.Combine(options.DestinationPath,
+                $@"Content\{student.SchoolName}\Students\", $"{student.StudentUSI}{extension}");
             var destinationFolder = System.IO.Path.GetDirectoryName(destinationFile);
 
             if (!System.IO.Directory.Exists(destinationFolder))

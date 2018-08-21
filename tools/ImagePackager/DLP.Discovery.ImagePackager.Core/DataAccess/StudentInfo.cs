@@ -8,10 +8,9 @@ namespace DLP.Discovery.ImagePackager.Core.DataAccess
 {
     public class StudentInfo
     {
-        /// <summary>
-        /// EdFi StudentUSI
-        /// </summary>
         public int StudentUSI { get; set; }
         public string FileName { get; set; }
+        public int SchoolId { get; set; }
+        public string SchoolName { get; set; }
     }
 }

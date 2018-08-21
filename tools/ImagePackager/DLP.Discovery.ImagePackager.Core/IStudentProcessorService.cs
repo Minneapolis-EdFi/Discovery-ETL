@@ -43,7 +43,7 @@ namespace DLP.Discovery.ImagePackager.Core
             if (proceed)
             {
                 Console.WriteLine("Discovering students...");
-                var students = _repository.LoadStudentPhotos();
+                var students = _repository.LoadStudentPhotoInformation(options);
                 Console.WriteLine("Found {0} images from students, extracting and renaming images...", students.Count);
                 var outputLogFile = System.IO.Path.Combine(options.DestinationPath, "log.txt");
                 var processedFile = "";

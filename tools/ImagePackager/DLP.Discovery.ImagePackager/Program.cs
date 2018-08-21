@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CommandLine;
 using DLP.Discovery.ImagePackager.Core;
 using DLP.Discovery.ImagePackager.Core.CommandLine;
+using DLP.Discovery.ImagePackager.Core.DataAccess;
 using StructureMap;
 
 namespace DLP.Discovery.ImagePackager
@@ -23,6 +24,8 @@ namespace DLP.Discovery.ImagePackager
                     x.AssemblyContainingType<IImageExtractionService>();
                     x.WithDefaultConventions();
                 });
+
+                _.For<IStudentRepositoryService>().Use<StudentInputFileService>();
             });
 
             var result = Parser.Default.ParseArguments<Options>(args)
