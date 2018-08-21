@@ -39,6 +39,8 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandLine\Options.cs" />
+    <Compile Include="Compression\IFolderCompressor.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DataAccess\IConnectionSource.cs" />
     <Compile Include="DataAccess\IStudentRepository.cs" />

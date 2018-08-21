@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DLP.Discovery.ImagePackager.Core.CommandLine;
+using DLP.Discovery.ImagePackager.Core.Compression;
 using DLP.Discovery.ImagePackager.Core.DataAccess;
 
 namespace DLP.Discovery.ImagePackager.Core
@@ -17,11 +18,13 @@ namespace DLP.Discovery.ImagePackager.Core
     {
         private readonly IStudentRepositoryService _repository;
         private readonly IImageExtractionService _imageExtractor;
+        private readonly IDistrictCompressor _compressor;
 
-        public StudentsProcessorService(IStudentRepositoryService repository, IImageExtractionService imageExtractor)
+        public StudentsProcessorService(IStudentRepositoryService repository, IImageExtractionService imageExtractor, IDistrictCompressor compressor)
         {
             _repository = repository;
             _imageExtractor = imageExtractor;
+            _compressor = compressor;
         }
 
         public void Execute(Options options)
@@ -81,6 +84,8 @@ namespace DLP.Discovery.ImagePackager.Core
 
                         logStream.Flush();
                     }
+
+                    //_compressor.CompressAllFolders(System.IO.Path.Combine(options.DestinationPath, "Content"), System.IO.Path.Combine(options.DestinationPath, "Compressed"));
                 }
 
                 Console.WriteLine("");
