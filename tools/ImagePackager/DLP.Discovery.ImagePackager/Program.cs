@@ -37,10 +37,6 @@ namespace DLP.Discovery.ImagePackager
                             var processor = container.GetInstance<IStudentsProcessorService>();
                             processor.Execute(options);
                             break;
-                        case "compress":
-                            var processor = container.GetInstance<IStudentsProcessorService>();
-                            processor.Execute(options);
-                            break;
                     }
                 });
         }
