@@ -31,8 +31,17 @@ namespace DLP.Discovery.ImagePackager
             var result = Parser.Default.ParseArguments<Options>(args)
                 .WithParsed(options =>
                 {
-                    var processor = container.GetInstance<IStudentsProcessorService>();
-                    processor.Execute(options);
+                    switch (options.Action.ToLower())
+                    {
+                        case "copy":
+                            var processor = container.GetInstance<IStudentsProcessorService>();
+                            processor.Execute(options);
+                            break;
+                        case "compress":
+                            var processor = container.GetInstance<IStudentsProcessorService>();
+                            processor.Execute(options);
+                            break;
+                    }
                 });
         }
     }

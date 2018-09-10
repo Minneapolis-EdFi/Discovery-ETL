@@ -84,8 +84,6 @@ namespace DLP.Discovery.ImagePackager.Core
 
                         logStream.Flush();
                     }
-
-                    //_compressor.CompressAllFolders(System.IO.Path.Combine(options.DestinationPath, "Content"), System.IO.Path.Combine(options.DestinationPath, "Compressed"));
                 }
 
                 Console.WriteLine("");

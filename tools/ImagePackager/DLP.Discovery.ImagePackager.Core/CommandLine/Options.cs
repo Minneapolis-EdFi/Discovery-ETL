@@ -9,6 +9,9 @@ namespace DLP.Discovery.ImagePackager.Core.CommandLine
 {
     public class Options
     {
+        [Option('a', "action", Required = true, HelpText = "Action to be executed, values can be: [copy]|[compress]")]
+        public string Action { get; set; }
+
         [Option('s', "source",Required = true, HelpText = "Folder where Dicovery images are located")]
         public string SourceImagePath { get; set; }
 
